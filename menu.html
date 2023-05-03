@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel = "icon" href = "logo.png" type = "image/x-icon">
+        <script src="https://kit.fontawesome.com/1d0a8d439f.js" crossorigin="anonymous"></script>
+        <title>
+            Wyndell's Al Fresco 
+        </title>   
+    </head>
+    <body>
+        <!-----------home page with background image--------------------------->
+        <div class="slider2">
+            <div class="load">
+                
+            </div>
+            <div class="content2">
+                <div class="navOut" id="navOut">
+                    <div class="logo">
+                        <a href=""><img src="logo2.png" alt=""></a>
+                      </div>
+                <div class="nav">
+                    <ul>
+                        
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="reservation.html">RESERVATION</a></li>
+                        <li><a href="menu.html">MENU</a></li>
+                       
+                        
+                    </ul>
+                </div></div>
+                <div class="principal">
+                       
+                         <table class="menuTable">
+                          <tr>
+                            <td onclick="showPopup('menu1.jpg')">
+                              <img src="menuCover1.jpg" alt="Menu 1">
+                            </td>
+
+                            <td onclick="showPopup('menu2.jpg')">
+                              <img src="menuCover2.jpg" alt="Menu 2">
+                            </td>
+
+                            <td onclick="showPopup('menu3.jpg')">
+                                <img src="menuCover3.jpg" alt="Menu 1">
+                              </td>
+
+                              <td onclick="showPopup('menu4.jpg')">
+                                <img src="menuCover4.jpg" alt="Menu 2">
+                              </td>
+
+                          </tr>
+
+                          
+                          <tr>
+                            <td onclick="showPopup('menu5.jpg')">
+                              <img src="menuCover5.jpg" alt="Menu 3">
+                            </td>
+
+                            <td onclick="showPopup('menu6.png')">
+                              <img src="menuCover6.jpg" alt="Menu 4">
+                            </td>
+
+                            <td onclick="showPopup('menu7.jpg')">
+                                <img src="menuCover7.jpg" alt="Menu 1">
+                              </td>
+                              
+                              <td onclick="showPopup('menu8.jpg')">
+                                <img src="menuCover8.jpg" alt="Menu 2">
+                              </td>
+
+                          </tr>
+                        </table>
+                        
+                        
+                        <div id="popup" onclick="hidePopup()">
+                          <img id="popup-img" src="" alt="">
+                        </div>
+                      
+                    
+                </div>
+            </div>
+        </div>
+        <!---end homepage with background image-->
+        <!-------------------------------------------------------------->
+        
+
+        <!-------------------------------------------------------------->
+        <div class="footer">
+          <div class="footerContainer">
+          <div class="footerCol1">
+            <h2>LOCATION</h2>
+            
+            <p><br><img src="location.png" alt="">  Km.58 Marikina-Infanta Hwy, 
+            <br>&nbsp;   &nbsp;   &nbsp;   &nbsp;Tanay,  Rizal, 
+              Philippines <br>
+              &nbsp;   &nbsp;  &nbsp;    
+            </p>
+          </div>
+          <div class="footerCol2">
+            <h2>FIND US</h2>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/wyndellsalfresco"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/wyndellsalfresco/"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="footerCol3">
+            <h2>CONTACT US</h2>
+            <p>
+              <br>
+              <i class="fas fa-phone"></i>  &nbsp; +63 960 294 4843 <br><br>
+              <i class="far fa-envelope"></i>  &nbsp; wyndellsalfresco@gmail.com
+            
+            </p>
+          </div>
+        </div>
+        </div>
+        <div class="footer2">
+          <div class="footer2Cover">
+          <h2><i class="fas fa-clock"></i>&nbsp; 24 HOURS OPEN</h2>
+          </div>
+        </div>
+       
+        
+
+        
+        
+          <script>
+            //navigation menu--------------------------------
+            window.addEventListener('scroll', function() {
+              var navOut = document.getElementById('navOut');
+              if (document.documentElement.scrollTop > 0) {
+                navOut.classList.add('scrolled');
+              } else {
+                navOut.classList.remove('scrolled');
+              }
+            });
+          
+            // Show popup function
+            function showPopup(imgSrc) {
+              // Create a new image element for the popup
+              var popupImg = document.createElement('img');
+              popupImg.src = imgSrc;
+          
+              // Create a new div element for the popup
+              var popupDiv = document.createElement('div');
+              popupDiv.classList.add('popup');
+              popupDiv.appendChild(popupImg);
+          
+              // Add the popup to the document
+              document.body.appendChild(popupDiv);
+            }
+          
+            // Get all the images in the table
+            var images = document.querySelectorAll('table img');
+          
+            // Add a click event listener to each image
+            images.forEach(function(img) {
+              img.addEventListener('click', function() {
+                showPopup(this.src);
+              });
+            });
+          
+            // Add a click event listener to the document
+            document.addEventListener('click', function(event) {
+              // If the click was not on an image or inside a popup, remove all popups
+              if (!event.target.matches('table img') && !event.target.matches('.popup *')) {
+                var popups = document.querySelectorAll('.popup');
+                popups.forEach(function(popup) {
+                  document.body.removeChild(popup);
+                });
+              }
+            });
+         
+          </script>
+          
+        
+    </body>
+</html>
+
+
+
+
